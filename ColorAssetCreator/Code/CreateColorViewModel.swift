@@ -3,6 +3,7 @@ import SwiftUI
 @Observable
 final class CreateColorViewModel {
     var assetPath: String = ""
+    var urlPath: URL?
     var colorName: String = ""
     var colorLight: Color = .white
     var lightRed = 1.0 { didSet { updateColorDisplay() } }
@@ -30,7 +31,7 @@ final class CreateColorViewModel {
         let fm = FileManager.default
         let colorDir = URL(fileURLWithPath: assetPath)
             .appendingPathComponent("\(colorName).colorset")
-        
+        colorDir.startAccessingSecurityScopedResource()
         do {
             try fm.createDirectory(at: colorDir, withIntermediateDirectories: true)
             var colors: [[String: Any]] = [
@@ -79,8 +80,10 @@ final class CreateColorViewModel {
             
             let jsonData = try JSONSerialization.data(withJSONObject: contents, options: .prettyPrinted)
             let fileURL = colorDir.appendingPathComponent("Contents.json")
+            fileURL.startAccessingSecurityScopedResource()
             try jsonData.write(to: fileURL)
-            
+            fileURL.stopAccessingSecurityScopedResource()
+            colorDir.stopAccessingSecurityScopedResource()
             setStatus("✅ Color asset created!")
         } catch {
             setStatus("❌ Error: \(error.localizedDescription)")
@@ -93,7 +96,6 @@ final class CreateColorViewModel {
     }
     
     private func updateColorDisplay() {
-        print("Updated")
         colorLight = Color(red: lightRed, green: lightGreen, blue: lightBlue, opacity: lightAlpha)
         colorDark = Color(red: darkRed, green: darkGreen, blue: darkBlue, opacity: darkAlpha)
     }

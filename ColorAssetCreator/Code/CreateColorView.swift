@@ -65,8 +65,12 @@ struct CreateColorView: View {
         
         if panel.runModal() == .OK {
             if let url = panel.url {
-                viewModel.assetPath = url.path
-            }
+                if url.startAccessingSecurityScopedResource() {
+                    viewModel.assetPath = url.path
+                    viewModel.urlPath = url
+                                    url.stopAccessingSecurityScopedResource()
+                }
+                            }
         }
     }
 }
