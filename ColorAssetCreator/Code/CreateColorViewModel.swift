@@ -31,7 +31,7 @@ final class CreateColorViewModel {
         let fm = FileManager.default
         let colorDir = URL(fileURLWithPath: assetPath)
             .appendingPathComponent("\(colorName).colorset")
-        colorDir.startAccessingSecurityScopedResource()
+        _ = colorDir.startAccessingSecurityScopedResource()
         do {
             try fm.createDirectory(at: colorDir, withIntermediateDirectories: true)
             var colors: [[String: Any]] = [
@@ -80,7 +80,7 @@ final class CreateColorViewModel {
             
             let jsonData = try JSONSerialization.data(withJSONObject: contents, options: .prettyPrinted)
             let fileURL = colorDir.appendingPathComponent("Contents.json")
-            fileURL.startAccessingSecurityScopedResource()
+            _ = fileURL.startAccessingSecurityScopedResource()
             try jsonData.write(to: fileURL)
             fileURL.stopAccessingSecurityScopedResource()
             colorDir.stopAccessingSecurityScopedResource()
