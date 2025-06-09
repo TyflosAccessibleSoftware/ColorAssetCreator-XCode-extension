@@ -6,14 +6,77 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B26CDC1A2DF6AF87002C6CEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CDC192DF6AF87002C6CEA /* Cocoa.framework */; };
+		B26CDC1C2DF6AF87002C6CEA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CDC1B2DF6AF87002C6CEA /* XcodeKit.framework */; };
+		B26CDC262DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B26CDC172DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B26CDC242DF6AF87002C6CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B26CDBD52DF69DCC002C6CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B26CDC162DF6AF87002C6CEA;
+			remoteInfo = ColorAssetCreatorExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B26CDC272DF6AF87002C6CEA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B26CDC262DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B26CDBDD2DF69DCC002C6CEA /* ColorAssetCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorAssetCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26CDC172DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ColorAssetCreatorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26CDC192DF6AF87002C6CEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B26CDC1B2DF6AF87002C6CEA /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B26CDC2A2DF6AF87002C6CEA /* Exceptions for "ColorAssetCreatorExtension" folder in "ColorAssetCreatorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B26CDC162DF6AF87002C6CEA /* ColorAssetCreatorExtension */;
+		};
+		B26CDC2F2DF6B287002C6CEA /* Exceptions for "ColorAssetCreator" folder in "ColorAssetCreatorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Code/CreateColorView.swift,
+				Code/CreateColorViewModel.swift,
+				Code/RGBAInput.swift,
+			);
+			target = B26CDC162DF6AF87002C6CEA /* ColorAssetCreatorExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B26CDBDF2DF69DCC002C6CEA /* ColorAssetCreator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B26CDC2F2DF6B287002C6CEA /* Exceptions for "ColorAssetCreator" folder in "ColorAssetCreatorExtension" target */,
+			);
 			path = ColorAssetCreator;
+			sourceTree = "<group>";
+		};
+		B26CDC1D2DF6AF87002C6CEA /* ColorAssetCreatorExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B26CDC2A2DF6AF87002C6CEA /* Exceptions for "ColorAssetCreatorExtension" folder in "ColorAssetCreatorExtension" target */,
+			);
+			path = ColorAssetCreatorExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +89,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B26CDC142DF6AF87002C6CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B26CDC1A2DF6AF87002C6CEA /* Cocoa.framework in Frameworks */,
+				B26CDC1C2DF6AF87002C6CEA /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				B26CDBDF2DF69DCC002C6CEA /* ColorAssetCreator */,
+				B26CDC1D2DF6AF87002C6CEA /* ColorAssetCreatorExtension */,
+				B26CDC182DF6AF87002C6CEA /* Frameworks */,
 				B26CDBDE2DF69DCC002C6CEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				B26CDBDD2DF69DCC002C6CEA /* ColorAssetCreator.app */,
+				B26CDC172DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B26CDC182DF6AF87002C6CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B26CDC192DF6AF87002C6CEA /* Cocoa.framework */,
+				B26CDC1B2DF6AF87002C6CEA /* XcodeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +139,12 @@
 				B26CDBD92DF69DCC002C6CEA /* Sources */,
 				B26CDBDA2DF69DCC002C6CEA /* Frameworks */,
 				B26CDBDB2DF69DCC002C6CEA /* Resources */,
+				B26CDC272DF6AF87002C6CEA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B26CDC252DF6AF87002C6CEA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B26CDBDF2DF69DCC002C6CEA /* ColorAssetCreator */,
@@ -69,6 +155,28 @@
 			productName = ColorAssetCreator;
 			productReference = B26CDBDD2DF69DCC002C6CEA /* ColorAssetCreator.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B26CDC162DF6AF87002C6CEA /* ColorAssetCreatorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B26CDC2B2DF6AF87002C6CEA /* Build configuration list for PBXNativeTarget "ColorAssetCreatorExtension" */;
+			buildPhases = (
+				B26CDC132DF6AF87002C6CEA /* Sources */,
+				B26CDC142DF6AF87002C6CEA /* Frameworks */,
+				B26CDC152DF6AF87002C6CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B26CDC1D2DF6AF87002C6CEA /* ColorAssetCreatorExtension */,
+			);
+			name = ColorAssetCreatorExtension;
+			packageProductDependencies = (
+			);
+			productName = ColorAssetCreatorExtension;
+			productReference = B26CDC172DF6AF87002C6CEA /* ColorAssetCreatorExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +189,9 @@
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					B26CDBDC2DF69DCC002C6CEA = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					B26CDC162DF6AF87002C6CEA = {
 						CreatedOnToolsVersion = 16.3;
 					};
 				};
@@ -100,12 +211,20 @@
 			projectRoot = "";
 			targets = (
 				B26CDBDC2DF69DCC002C6CEA /* ColorAssetCreator */,
+				B26CDC162DF6AF87002C6CEA /* ColorAssetCreatorExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B26CDBDB2DF69DCC002C6CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B26CDC152DF6AF87002C6CEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +241,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B26CDC132DF6AF87002C6CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B26CDC252DF6AF87002C6CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B26CDC162DF6AF87002C6CEA /* ColorAssetCreatorExtension */;
+			targetProxy = B26CDC242DF6AF87002C6CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B26CDBE72DF69DCD002C6CEA /* Debug */ = {
@@ -299,6 +433,60 @@
 			};
 			name = Release;
 		};
+		B26CDC282DF6AF87002C6CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ColorAssetCreatorExtension/ColorAssetCreatorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BEU2F6LPKF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorAssetCreatorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorAssetCreatorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyflosaccessiblesoftware.ColorAssetCreator.ColorAssetCreatorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B26CDC292DF6AF87002C6CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ColorAssetCreatorExtension/ColorAssetCreatorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BEU2F6LPKF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorAssetCreatorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorAssetCreatorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyflosaccessiblesoftware.ColorAssetCreator.ColorAssetCreatorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -316,6 +504,15 @@
 			buildConfigurations = (
 				B26CDBEA2DF69DCD002C6CEA /* Debug */,
 				B26CDBEB2DF69DCD002C6CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B26CDC2B2DF6AF87002C6CEA /* Build configuration list for PBXNativeTarget "ColorAssetCreatorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B26CDC282DF6AF87002C6CEA /* Debug */,
+				B26CDC292DF6AF87002C6CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
